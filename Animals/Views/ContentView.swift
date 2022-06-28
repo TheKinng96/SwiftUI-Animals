@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("ContentView")
-            .padding()
-    }
+  var animals: [AnimalModel] = Bundle.main.decode("animals.json")
+
+  var body: some View {
+    NavigationView {
+      List {
+        CoverImage()
+          .frame(height: 300)
+          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+        
+        ForEach(animals) { animal in
+          AnimalListItemRow(animal: animal)
+        }
+      } //: LIST
+      .navigationBarTitle("Africa", displayMode: .large)
+    } //: NAVIGATION
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var animals: [AnimalModel] = Bundle.main.decode("animals.json")
+  static var previews: some View {
+    ContentView(animals: animals)
+  }
 }
