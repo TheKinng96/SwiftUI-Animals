@@ -20,6 +20,7 @@ struct ContentView: View {
         ForEach(animals) { animal in
           AnimalListItemRow(animal: animal)
         }
+        .listRowBackground(Color.clear)
       } //: LIST
       .navigationBarTitle("Africa", displayMode: .large)
     } //: NAVIGATION
