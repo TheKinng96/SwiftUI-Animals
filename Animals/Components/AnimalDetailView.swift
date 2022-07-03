@@ -44,9 +44,30 @@ struct AnimalDetailView: View {
           InsertGalleryView(animal: animal)
         }
         .padding(.horizontal)
+
         // Facts
+        Group {
+          Heading(headingImage: "questionmark.circle", headingText: "Did you know?")
+          
+          InsertFactBlock(animal: animal)
+        }
+        .padding(.horizontal)
+        
         // Description
+        Group {
+          Heading(headingImage: "info.circle", headingText: "All about \(animal.name)")
+          
+          Text(animal.description)
+            .multilineTextAlignment(.leading)
+            .layoutPriority(1)
+        }
+        .padding(.horizontal)
+        
         // Map
+        Group {
+            Heading(headingImage: "map", headingText: "National Parks")
+        }
+        
         // Link
         
       }//: VSTACK
