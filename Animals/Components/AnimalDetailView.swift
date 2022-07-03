@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AnimalDetailView: View {
   let animal: AnimalModel
-
+  
   var body: some View {
     ScrollView(.vertical, showsIndicators: false) {
       VStack(alignment: .center, spacing: 20) {
@@ -44,7 +44,7 @@ struct AnimalDetailView: View {
           InsertGalleryView(animal: animal)
         }
         .padding(.horizontal)
-
+        
         // Facts
         Group {
           Heading(headingImage: "questionmark.circle", headingText: "Did you know?")
@@ -65,10 +65,14 @@ struct AnimalDetailView: View {
         
         // Map
         Group {
-            Heading(headingImage: "map", headingText: "National Parks")
+          Heading(headingImage: "map", headingText: "National Parks")
+          
+          InsertMap()
         }
-        
+        .padding(.horizontal)
+
         // Link
+        LinkComponent(animal: animal)
         
       }//: VSTACK
       .navigationTitle("Learn about \(animal.name)")
