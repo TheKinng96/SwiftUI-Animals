@@ -11,21 +11,39 @@ struct ContentView: View {
   @State private var isGridViewActive: Bool = false
   let animals: [AnimalModel] = Bundle.main.decode("animals.json")
   let haptics = UIImpactFeedbackGenerator(style: .medium)
+  
+  let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
 
   var body: some View {
     NavigationView {
-      List {
-        CoverImage()
-          .frame(height: 300)
-          .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-        
-        ForEach(animals) { animal in
-          NavigationLink(destination: AnimalDetailView(animal: animal)) {
-            AnimalListItemRow(animal: animal)
-          }
-        }
-        .listRowBackground(Color.clear)
-      } //: LIST
+      Group {
+        if !isGridViewActive {
+          List {
+            CoverImage()
+              .frame(height: 300)
+              .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            
+            ForEach(animals) { animal in
+              NavigationLink(destination: AnimalDetailView(animal: animal)) {
+                AnimalListItemRow(animal: animal)
+              }
+            }
+            .listRowBackground(Color.clear)
+          } //: LIST
+        } else {
+          ScrollView(.vertical, showsIndicators: false) {
+            LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
+              ForEach(animals) { animal in
+                NavigationLink(destination: AnimalDetailView(animal: animal)) {
+                  GridAnimalView(animal: animal)
+                } //: LINK
+              } //: LOOP
+            } //: GRID
+            .padding(10)
+            .animation(.easeIn, value: isGridViewActive)
+          } //: SCROLL
+        } //: CONDITIONAL
+      } //:  GROUP
       .navigationBarTitle("Africa", displayMode: .large)
       .toolbar {
         ToolbarItem(placement: .navigationBarTrailing) {

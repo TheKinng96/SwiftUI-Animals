@@ -47,6 +47,7 @@
 		B29DFA0028680F220072B2F8 /* CoverImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DF9FF28680F220072B2F8 /* CoverImage.swift */; };
 		B29DFA03286810500072B2F8 /* CoverImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DFA02286810500072B2F8 /* CoverImageModel.swift */; };
 		B29DFA06286813450072B2F8 /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DFA05286813450072B2F8 /* CodableExtension.swift */; };
+		B2E1ACDA287AEAB60038CCD8 /* GridAnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E1ACD9287AEAB60038CCD8 /* GridAnimalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		B29DF9FF28680F220072B2F8 /* CoverImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImage.swift; sourceTree = "<group>"; };
 		B29DFA02286810500072B2F8 /* CoverImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageModel.swift; sourceTree = "<group>"; };
 		B29DFA05286813450072B2F8 /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
+		B2E1ACD9287AEAB60038CCD8 /* GridAnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridAnimalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 		B29DF9F6286808E90072B2F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B2E1ACD8287AEA9E0038CCD8 /* Main */,
 				B243FD6E287321680009215E /* Map */,
 				B236EC4228718C1F009BB2A8 /* Video */,
 				B29DF9FF28680F220072B2F8 /* CoverImage.swift */,
@@ -255,6 +258,14 @@
 				B29DFA05286813450072B2F8 /* CodableExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B2E1ACD8287AEA9E0038CCD8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B2E1ACD9287AEAB60038CCD8 /* GridAnimalView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +358,7 @@
 				B236EC3D28711772009BB2A8 /* InsertFactBlock.swift in Sources */,
 				B29DF9FE286809380072B2F8 /* MainView.swift in Sources */,
 				B29DFA06286813450072B2F8 /* CodableExtension.swift in Sources */,
+				B2E1ACDA287AEAB60038CCD8 /* GridAnimalView.swift in Sources */,
 				B243FD6B28731BB90009215E /* LocationModel.swift in Sources */,
 				B29DF9FA286809100072B2F8 /* MapView.swift in Sources */,
 				B29DFA03286810500072B2F8 /* CoverImageModel.swift in Sources */,
