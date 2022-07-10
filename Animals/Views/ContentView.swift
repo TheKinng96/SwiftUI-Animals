@@ -9,10 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
   @State private var isGridViewActive: Bool = false
+  @State private var gridLayout: [GridItem] = [GridItem(.flexible())]
+  @State private var gridColumn: Int = 1
+  @State private var toolbarIcon: String = "square.grid.2x2"
   let animals: [AnimalModel] = Bundle.main.decode("animals.json")
   let haptics = UIImpactFeedbackGenerator(style: .medium)
   
-  let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
+  
+  func updateGridLayout() {
+    gridLayout = Array(repeating: .init(.flexible()), count: gridColumn % 3 + 1)
+    gridColumn = gridLayout.count
+    
+    switch gridColumn {
+    case 1:
+      toolbarIcon = "square.grid.2x2"
+    case 2:
+      toolbarIcon = "square.grid.3x2"
+    case 3:
+      toolbarIcon = "rectangle.grid.1x2"
+    default:
+      toolbarIcon = "square.grid.2x2"
+    }
+  }
 
   var body: some View {
     NavigationView {
@@ -29,6 +47,10 @@ struct ContentView: View {
               }
             }
             .listRowBackground(Color.clear)
+            
+            CreditView()
+              .modifier(CenterModifier())
+              .listRowBackground(Color.clear)
           } //: LIST
         } else {
           ScrollView(.vertical, showsIndicators: false) {
@@ -50,7 +72,6 @@ struct ContentView: View {
           HStack(spacing: 10) {
             // LIST VIEW
             Button {
-              print("clicked!")
               isGridViewActive = false
               haptics.impactOccurred()
             } label: {
@@ -61,11 +82,11 @@ struct ContentView: View {
             
             // GRID VIEW
             Button {
-              print("clicked!")
               isGridViewActive = true
               haptics.impactOccurred()
+              updateGridLayout()
             } label: {
-              Image(systemName: "square.grid.2x2")
+              Image(systemName: toolbarIcon)
                 .font(.title2)
                 .foregroundColor(!isGridViewActive ? .primary : .accentColor)
             } // BUTTON

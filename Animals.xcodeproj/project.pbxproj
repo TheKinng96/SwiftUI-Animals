@@ -48,6 +48,8 @@
 		B29DFA03286810500072B2F8 /* CoverImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DFA02286810500072B2F8 /* CoverImageModel.swift */; };
 		B29DFA06286813450072B2F8 /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29DFA05286813450072B2F8 /* CodableExtension.swift */; };
 		B2E1ACDA287AEAB60038CCD8 /* GridAnimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E1ACD9287AEAB60038CCD8 /* GridAnimalView.swift */; };
+		B2E1ACDC287AF1790038CCD8 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E1ACDB287AF1790038CCD8 /* CreditView.swift */; };
+		B2E1ACDF287AF5150038CCD8 /* CenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E1ACDE287AF5150038CCD8 /* CenterModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,9 @@
 		B29DFA02286810500072B2F8 /* CoverImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverImageModel.swift; sourceTree = "<group>"; };
 		B29DFA05286813450072B2F8 /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
 		B2E1ACD9287AEAB60038CCD8 /* GridAnimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridAnimalView.swift; sourceTree = "<group>"; };
+		B2E1ACDB287AF1790038CCD8 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
+		B2E1ACDE287AF5150038CCD8 /* CenterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterModifier.swift; sourceTree = "<group>"; };
+		B2E1ACE0287AFEE40038CCD8 /* Animals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Animals.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +164,8 @@
 		B29DF9C72867FC120072B2F8 /* Animals */ = {
 			isa = PBXGroup;
 			children = (
+				B2E1ACE0287AFEE40038CCD8 /* Animals.entitlements */,
+				B2E1ACDD287AF4FE0038CCD8 /* Modifier */,
 				B243FD6728730CD90009215E /* Helpers */,
 				B29DFA04286813340072B2F8 /* Extension */,
 				B29DFA012868103C0072B2F8 /* Model */,
@@ -237,6 +244,7 @@
 				B236EC3E28711AFC009BB2A8 /* InsertMap.swift */,
 				B236EC4028718200009BB2A8 /* LinkComponent.swift */,
 				B243FD7328732B4C0009215E /* Gallery */,
+				B2E1ACDB287AF1790038CCD8 /* CreditView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -266,6 +274,14 @@
 				B2E1ACD9287AEAB60038CCD8 /* GridAnimalView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		B2E1ACDD287AF4FE0038CCD8 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				B2E1ACDE287AF5150038CCD8 /* CenterModifier.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,12 +385,14 @@
 				B243FD70287321760009215E /* MapAnnotationView.swift in Sources */,
 				B236EC4628718D7B009BB2A8 /* VideoModel.swift in Sources */,
 				B29114F2286B36FF0029EF05 /* AnimalModel.swift in Sources */,
+				B2E1ACDC287AF1790038CCD8 /* CreditView.swift in Sources */,
 				B29DFA0028680F220072B2F8 /* CoverImage.swift in Sources */,
 				B243FD7228732B480009215E /* GalleryBackgroundView.swift in Sources */,
 				B29DF9C92867FC120072B2F8 /* AnimalsApp.swift in Sources */,
 				B29DF9F8286809050072B2F8 /* VideoListView.swift in Sources */,
 				B236EC3F28711AFC009BB2A8 /* InsertMap.swift in Sources */,
 				B29DF9FC286809200072B2F8 /* GalleryView.swift in Sources */,
+				B2E1ACDF287AF5150038CCD8 /* CenterModifier.swift in Sources */,
 				B29114F0286B34120029EF05 /* AnimalListItemRow.swift in Sources */,
 				B236EC482871D195009BB2A8 /* VideoPlayerView.swift in Sources */,
 			);
@@ -502,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Animals/Animals.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Animals/Preview Content\"";
@@ -521,6 +540,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yap.fengyuan.Animals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,6 +552,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Animals/Animals.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Animals/Preview Content\"";
@@ -551,6 +572,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yap.fengyuan.Animals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
